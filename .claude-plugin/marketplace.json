@@ -1,0 +1,22 @@
+{
+  "name": "hiddentao-plugins",
+  "owner": {
+    "name": "Ramesh Nair",
+    "email": "ram@hiddentao.com"
+  },
+  "metadata": {
+    "description": "A collection of Claude Code plugins for better dev",
+    "repository": "https://github.com/hiddentao/claude-code-plugins"
+  },
+  "plugins": [
+    {
+      "name": "docs",
+      "source": "./plugins/docs",
+      "description": "A plugin to generate and manage documentation for a codebase",
+      "version": "1.0.0",
+      "keywords": ["retype", "docs", "generate", "markdown"],
+      "license": "MIT",
+      "repository": "https://github.com/hiddentao/claude-code-plugins"
+    }
+  ]
+}

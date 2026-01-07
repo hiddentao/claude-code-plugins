@@ -1,0 +1,26 @@
+{
+  "name": "hiddentao-plugins",
+  "packageManager": "bun@1.1.42",
+  "version": "1.0.0",
+  "description": "A collection of Claude Code plugins by Ramesh Nair",
+  "author": "Ramesh Nair <ram@hiddentao.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiddentao/claude-code-plugins"
+  },
+  "homepage": "https://github.com/hiddentao/claude-code-plugins",
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "marketplace"
+  ],
+  "scripts": {
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "husky": "^9.1.7"
+  }
+}
