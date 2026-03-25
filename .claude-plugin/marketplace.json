@@ -17,6 +17,15 @@
       "keywords": ["retype", "docs", "generate", "markdown"],
       "license": "MIT",
       "repository": "https://github.com/hiddentao/claude-code-plugins"
+    },
+    {
+      "name": "subagent",
+      "source": "./plugins/subagent",
+      "description": "Interactive subagent picker - find and launch the right subagent for any task",
+      "version": "1.0.0",
+      "keywords": ["subagent", "agent", "picker", "launcher"],
+      "license": "MIT",
+      "repository": "https://github.com/hiddentao/claude-code-plugins"
     }
   ]
 }

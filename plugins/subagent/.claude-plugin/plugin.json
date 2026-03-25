@@ -1,0 +1,14 @@
+{
+  "name": "subagent",
+  "description": "Interactive subagent picker - find and launch the right subagent for any task",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ramesh Nair",
+    "email": "ram@hiddentao.com",
+    "url": "https://hiddentao.com"
+  },
+  "homepage": "https://github.com/hiddentao/claude-code-plugins/tree/main/plugins/subagent",
+  "repository": "https://github.com/hiddentao/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["subagent", "agent", "picker", "launcher"]
+}

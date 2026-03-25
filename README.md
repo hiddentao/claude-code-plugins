@@ -57,6 +57,34 @@ Then run from the documentation output folder:
 retype start
 ```
 
+### subagent
+
+Interactive subagent picker - find and launch the right subagent for any task.
+
+**Install:**
+```
+/plugin install subagent@hiddentao-plugins
+```
+
+#### Commands
+
+##### subagent
+
+Find and launch a subagent matching your needs.
+
+```
+/subagent:subagent <description of what you need>
+```
+
+**Examples:**
+```
+/subagent:subagent review my code
+/subagent:subagent security audit
+/subagent:subagent explore the codebase
+```
+
+Dynamically discovers all available subagent types, matches them against your query, and lets you pick which one to launch with a custom prompt.
+
 ## License
 
 MIT
