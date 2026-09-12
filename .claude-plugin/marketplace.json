@@ -26,6 +26,15 @@
       "keywords": ["subagent", "agent", "picker", "launcher"],
       "license": "MIT",
       "repository": "https://github.com/hiddentao/claude-code-plugins"
+    },
+    {
+      "name": "code-review",
+      "source": "./plugins/code-review",
+      "description": "Adversarial multi-agent review of a codebase and its recent commits",
+      "version": "1.0.0",
+      "keywords": ["review", "code-review", "adversarial", "subagents"],
+      "license": "MIT",
+      "repository": "https://github.com/hiddentao/claude-code-plugins"
     }
   ]
 }
