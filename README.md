@@ -85,6 +85,57 @@ Find and launch a subagent matching your needs.
 
 Dynamically discovers all available subagent types, matches them against your query, and lets you pick which one to launch with a custom prompt.
 
+### code-review
+
+Adversarial multi-agent review of a codebase and its recent commits.
+
+**Install:**
+```
+/plugin install code-review@hiddentao-plugins
+```
+
+#### Commands
+
+##### adversarial
+
+Review a codebase and its recent commit history using up to 10 adversarial subagents.
+
+```
+/code-review:adversarial [path] [last N commits] [with N agents]
+```
+
+**Examples:**
+```
+/code-review:adversarial
+/code-review:adversarial src/ last 5 commits
+/code-review:adversarial packages/api --commits 3 --agents 4
+/code-review:adversarial --range v1.2.0..HEAD --agents 6
+```
+
+**Features:**
+- Two rounds of subagents - independent reviewers, then adversarial verifiers who try to disprove every finding
+- Covers correctness, security, performance, scalability, tests, architecture, maintainability, duplication, language idioms and documentation
+- Configurable subagent budget, `--agents N`, defaulting to 10 and capped at 10, with review dimensions merged automatically at smaller budgets
+- Every finding carries file:line evidence, a verdict and, where rejected, the counter-evidence that ruled it out
+- Reviews the working tree and the commit range together, and never modifies the code under review
+
+**Process:**
+1. Resolves the scope, commit range and subagent budget from your arguments, asking only when you give none
+2. Writes a review brief and launches Round 1 reviewers in parallel, one per review dimension
+3. Launches Round 2 verifiers that must reproduce or reject each Round 1 finding from source, and hunt for what Round 1 missed
+4. Deduplicates findings, drops the rejected ones and ranks what survives by severity
+5. Writes a ranked, self-contained report to `code-review-report.md` and prints the verdict
+
+#### Skills
+
+##### review-rubric
+
+The review rubric used by the subagents - dimensions, finding schema, severity scale and verification protocol. Invoke it on its own to apply the same standard during a manual review.
+
+```
+/code-review:review-rubric
+```
+
 ## License
 
 MIT

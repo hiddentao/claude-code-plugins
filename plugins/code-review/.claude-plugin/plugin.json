@@ -1,0 +1,14 @@
+{
+  "name": "code-review",
+  "description": "Adversarial multi-agent review of a codebase and its recent commits",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ramesh Nair",
+    "email": "ram@hiddentao.com",
+    "url": "https://hiddentao.com"
+  },
+  "homepage": "https://github.com/hiddentao/claude-code-plugins/tree/main/plugins/code-review",
+  "repository": "https://github.com/hiddentao/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["review", "code-review", "adversarial", "subagents"]
+}
