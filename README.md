@@ -136,6 +136,61 @@ The review rubric used by the subagents - dimensions, finding schema, severity s
 /code-review:review-rubric
 ```
 
+### skill-files
+
+Rules and an audit command for writing skill files that AI agents can actually follow.
+
+**Install:**
+```
+/plugin install skill-files@hiddentao-plugins
+```
+
+#### Commands
+
+##### audit
+
+Audit an agent-facing skill file - a `SKILL.md`, `llms.txt`, `AGENTS.md` or any doc written for agents - against the 28 rules.
+
+```
+/skill-files:audit [path] [--test] [--fix]
+```
+
+**Examples:**
+```
+/skill-files:audit
+/skill-files:audit plugins/docs/skills/explore-code/SKILL.md
+/skill-files:audit docs/llms.txt --test
+/skill-files:audit .claude/skills/deploy/SKILL.md --fix
+```
+
+**Features:**
+- Audits the document and everything it references, so content moved behind progressive disclosure is still judged
+- Checks every code block against the real SDK, API or codebase, since a snippet naming something that does not exist is the failure agents hit most confidently
+- Greps every identifier, slug format and header name for stale variants left behind by a half-finished rename
+- Optional fresh-agent trial, `--test`, which hands a clean-context subagent the document alone and reports what it actually did
+- Findings ranked by how badly each one misleads an agent, each with the replacement text rather than an instruction to write some
+- Reports by default; applies fixes only with `--fix`, and never commits
+
+**Process:**
+1. Resolves the target from your arguments, or finds the agent-facing docs in the repository and asks when there is more than one
+2. Reads the document and every file it references, then locates the SDK, API or codebase it describes to check claims against
+3. Walks the checklist rule group by rule group, recording a finding per violation with its fix
+4. Verifies code blocks and identifier consistency against that ground truth
+5. Runs the fresh-agent trial if you asked for it, weighting confident-wrong behaviour heaviest
+6. Prints findings worst first, the checks that passed, and a verdict
+
+#### Skills
+
+##### writing-skill-files
+
+The 28 rules for writing a skill file an agent can follow - structure and ordering, rationale, named anti-patterns, decision rules, code contracts, identifier hygiene, freshness, testing and maintenance. Invoke it on its own while writing or revising a skill file.
+
+```
+/skill-files:writing-skill-files
+```
+
+Adapted from [The definitive guide to writing great skill files for AI agents](https://hiddentao.com/archives/2026/04/26/the-definitive-guide-to-writing-great-skill-files-for-ai-agents).
+
 ## License
 
 MIT

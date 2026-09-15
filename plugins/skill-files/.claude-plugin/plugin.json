@@ -1,0 +1,14 @@
+{
+  "name": "skill-files",
+  "description": "Rules and an audit command for writing skill files that AI agents can actually follow",
+  "version": "1.0.0",
+  "author": {
+    "name": "Ramesh Nair",
+    "email": "ram@hiddentao.com",
+    "url": "https://hiddentao.com"
+  },
+  "homepage": "https://github.com/hiddentao/claude-code-plugins/tree/main/plugins/skill-files",
+  "repository": "https://github.com/hiddentao/claude-code-plugins",
+  "license": "MIT",
+  "keywords": ["skill", "skill-file", "agent", "docs", "audit"]
+}

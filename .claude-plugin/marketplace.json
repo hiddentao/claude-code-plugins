@@ -35,6 +35,15 @@
       "keywords": ["review", "code-review", "adversarial", "subagents"],
       "license": "MIT",
       "repository": "https://github.com/hiddentao/claude-code-plugins"
+    },
+    {
+      "name": "skill-files",
+      "source": "./plugins/skill-files",
+      "description": "Rules and an audit command for writing skill files that AI agents can actually follow",
+      "version": "1.0.0",
+      "keywords": ["skill", "skill-file", "agent", "docs", "audit"],
+      "license": "MIT",
+      "repository": "https://github.com/hiddentao/claude-code-plugins"
     }
   ]
 }
